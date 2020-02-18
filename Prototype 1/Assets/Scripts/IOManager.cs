@@ -8,6 +8,9 @@ using UnityEngine;
 /// </summary>
 public class IOManager : MonoBehaviour
 {
+    /// <summary>
+    /// Singleton used to access IO manager
+    /// </summary>
     public static IOManager Singleton = null;
 
     void Awake(){

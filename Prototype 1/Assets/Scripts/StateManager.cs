@@ -46,6 +46,7 @@ public class StateManager : MonoBehaviour
         currentState.fear += emotionChange.fear;
 
         currentState.PrintState();
+        UIManager.Singleton.UpdateUI(currentState);
     }
 
     /// <summary>

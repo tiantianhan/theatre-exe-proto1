@@ -14,6 +14,10 @@ public class EmotionState
     public float envy = 0.0f;
 
     public void PrintState(){
-        Debug.Log("anger " + anger);
+        Debug.Log("State: anger " + anger + 
+        " sadness " + sadness + 
+        " joy " + joy +
+        " fear " + fear +
+        " envy " + envy);
     }
 }
