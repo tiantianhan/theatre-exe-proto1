@@ -14,6 +14,19 @@ public class StateManager : MonoBehaviour
     /// Current emotion state of person on stage.
     /// </summary>
     private EmotionState currentState = null;
+    
+    //Trying to add dictionary to be continued  
+ // Dictionary<string, float> emoStateValue = new Dictionary<string, float>();
+
+    //public float[] emoStateVlaue; 
+    enum DominantEmotion{
+        AngerDominant,
+        SadDominant,
+        JoyDominant,
+        FearDominant,
+        EnvyDominant,
+        NoDominant,
+    };
 
     void Awake(){
         Debug.Assert(Singleton == null, "StateManager Singleton not null on Awake.");
@@ -25,12 +38,16 @@ public class StateManager : MonoBehaviour
 
     void Start()
     {
-        
+      //  emoStateValue.Add("anger", currentState.anger);
+        DominantEmotion DominantEmo;
+        DominantEmo = DominantEmotion.NoDominant;
+
     }
 
     void Update()
     {
         //TODO: average emotion states? check for when to meltdown?
+        
     }
 
     /// <summary>
@@ -47,7 +64,16 @@ public class StateManager : MonoBehaviour
 
         currentState.PrintState();
         UIManager.Singleton.UpdateUI(currentState);
+        mapValue();
+
     }
+
+   public void mapValue()
+    {
+      
+    }
+
+   
 
     /// <summary>
     /// Get current emotion state of person on stage
