@@ -26,7 +26,9 @@ public class IOManager : MonoBehaviour
     void Update()
     {
         EmotionState change = new EmotionState();
-        bool didChange = false;
+        bool didChange = false; 
+        
+        //Anger
         if(Input.GetKeyDown(KeyCode.UpArrow)){
             change.anger += 0.1f;
             didChange = true;
@@ -37,7 +39,60 @@ public class IOManager : MonoBehaviour
             didChange = true;
         }
 
-        if(didChange){
+        //Sadness
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            change.sadness += 0.1f;
+            didChange = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            change.sadness -= 0.1f;
+            didChange = true;
+        }
+
+        //Joy
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            change.joy += 0.1f;
+            didChange = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            change.joy -= 0.1f;
+            didChange = true;
+        }
+
+        //Fear
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            change.fear += 0.1f;
+            didChange = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            change.fear -= 0.1f;
+            didChange = true;
+        }
+
+        //Envy
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            change.envy += 0.1f;
+            didChange = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            change.envy -= 0.1f;
+            didChange = true;
+        }
+
+
+        if (didChange){
             StateManager.Singleton.UpdateEmotions(change);
         }
     }
